@@ -1,0 +1,6 @@
+@LightingService.API_HostAddress = http://localhost:5070
+
+GET {{LightingService.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
