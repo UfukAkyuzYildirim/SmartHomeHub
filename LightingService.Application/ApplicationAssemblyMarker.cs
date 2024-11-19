@@ -1,6 +1,6 @@
 ﻿namespace LightingService.Application
 {
-    public class Class1
+    public class ApplicationAssemblyMarker
     {
 
     }
