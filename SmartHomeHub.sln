@@ -5,13 +5,13 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LightingService", "LightingService", "{51F469AA-C547-4A26-BC61-FB5E79DE21AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightingService.Domain", "LightingService.Domain\LightingService.Domain.csproj", "{52CE57B9-ACD2-4ECA-A82E-E739AFC40E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightingService.Domain", "LightingService.Domain\LightingService.Domain.csproj", "{52CE57B9-ACD2-4ECA-A82E-E739AFC40E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightingService.Application", "LightingService.Application\LightingService.Application.csproj", "{EF2781FE-FE5B-4447-8562-1BCCA6836C4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightingService.Application", "LightingService.Application\LightingService.Application.csproj", "{EF2781FE-FE5B-4447-8562-1BCCA6836C4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightingService.Infrastructure", "LightingService.Infrastructure\LightingService.Infrastructure.csproj", "{4574434E-4EB1-401B-9D5D-F1C71F6B1D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightingService.Infrastructure", "LightingService.Infrastructure\LightingService.Infrastructure.csproj", "{4574434E-4EB1-401B-9D5D-F1C71F6B1D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightingService.API", "LightingService.API\LightingService.API.csproj", "{0BB48B8D-8E84-4BCA-AAF3-0669B0D4FC2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightingService.API", "LightingService.API\LightingService.API.csproj", "{0BB48B8D-8E84-4BCA-AAF3-0669B0D4FC2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
