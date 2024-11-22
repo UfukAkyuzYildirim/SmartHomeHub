@@ -1,6 +1,8 @@
+using FluentValidation;
 using LightingService.Application;
 using LightingService.Domain.Interfaces.Repositories;
 using LightingService.Infrastructure.Repositories;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,16 +14,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add MediatR
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssemblyMarker).Assembly));
 
 // Add repository
 builder.Services.AddScoped<ITestRepository, TestRepository>();
 
-//builder.Services.AddDbContext<TestDbContext>(options =>
-//{
-//    options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection"));
-//});
+builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 

@@ -1,4 +1,5 @@
-﻿using LightingService.Application.Requests;
+﻿using FluentValidation;
+using LightingService.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,18 +16,26 @@ namespace LightingService.API.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        public async Task<IActionResult> GetTestData(int id)
+        public async Task<IActionResult> GetTestData([FromQuery]TestRequest req, [FromServices] IValidator<TestRequest> validator)
         {
-            var response = await _mediator.Send(new TestRequest { Id = id });
+            var validationResult = validator.Validate(req);
+            if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);
+
+            var response = await _mediator.Send(req);
             return Ok(response);
         }
 
         [HttpGet("GetTestData2")]
-        public async Task<IActionResult> GetTestData2()
+        public async Task<IActionResult> GetTestData2([FromQuery]TestRequest2 req, [FromServices] IValidator<TestRequest2> validator)
         {
-            // Perform necessary logic here
 
-            return BadRequest();
+            var validationResult = validator.Validate(req);
+            if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);
+
+            var response = await _mediator.Send(req);
+            return Ok(response);
         }
     }
 }
