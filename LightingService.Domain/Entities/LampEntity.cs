@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LightingService.Domain.Entities
 {
-    public class TestEntity
+    public class LampEntity
     {
         public int Id { get; set; }
-        public string Data { get; set; }
+        public int Situation { get; set; }
+
     }
 }

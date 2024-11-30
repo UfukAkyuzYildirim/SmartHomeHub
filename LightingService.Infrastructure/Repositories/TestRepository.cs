@@ -14,12 +14,12 @@ namespace LightingService.Infrastructure.Repositories
         //{
         //    throw new NotImplementedException();
         //}
-        public async Task<TestEntity> GetTestDataAsync(int id)
+        public async Task<LampEntity> GetTestDataAsync(int id)
         {
-            return new TestEntity
+            return new LampEntity
             {
                 Id = id,
-                Data = "Test Data"
+                Situation = 1
             };
         }
     }

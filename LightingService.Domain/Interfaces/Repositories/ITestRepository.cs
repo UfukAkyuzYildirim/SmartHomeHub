@@ -9,6 +9,6 @@ namespace LightingService.Domain.Interfaces.Repositories
 {
     public interface ITestRepository
     {
-        Task<TestEntity> GetTestDataAsync(int id);
+        Task<LampEntity> GetTestDataAsync(int id);
     }
 }
