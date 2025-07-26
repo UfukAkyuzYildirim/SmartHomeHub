@@ -1,14 +1,13 @@
 ﻿using FluentValidation;
 using LightingService.Application.Requests;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LightingService.API.Controllers
 {
     [ApiController]
     //[Route("api/[controller]/[action]")] //to add action name in route
-    [Route("api/[controller]")]
+    [Route("Lightning-Api/[controller]")]
     public class TestController:ControllerBase
     {
         private readonly IMediator _mediator;

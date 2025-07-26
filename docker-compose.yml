@@ -1,0 +1,23 @@
+
+services:
+  gateway:
+    container_name: smart-home-gateway
+    build:
+      context: .
+      dockerfile: Gateway.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - lightning-service
+
+  lightning-service:
+    container_name: lightning-service
+    build:
+      context: .
+      dockerfile: LightingService.API/Dockerfile
+    ports:
+      - "44335:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production

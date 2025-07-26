@@ -1,8 +1,10 @@
 using FluentValidation;
 using LightingService.Application;
+using LightingService.Application.Common.Interfaces;
 using LightingService.Domain.Interfaces.Repositories;
 using LightingService.Infrastructure.Data;
 using LightingService.Infrastructure.Repositories;
+using LightingService.Infrastructure.Services.ESP32;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -18,14 +20,19 @@ builder.Services.AddSwaggerGen();
 // Add MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssemblyMarker).Assembly));
 
+//Add FluentValidation
+builder.Services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyMarker>();
+
 // Add repository
 builder.Services.AddScoped<ITestRepository, TestRepository>();
 
-builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
 
 // Add DbContext with PostgreSQL
 builder.Services.AddDbContext<LightningServiceDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHttpClient<ITableMotorService,TableMotorService>();
 
 var app = builder.Build();
 
