@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LightingService.Application\LightingService.Application.csproj" />
     <ProjectReference Include="..\LightingService.Domain\LightingService.Domain.csproj" />
   </ItemGroup>
 
